@@ -29,7 +29,8 @@ http.createServer(function(req,res){
 
             /*------Part 2------*/
 
-var port = process.env.PORT || 8080;
+
+var port = process.env.PORT || 8000;
 var requestListener = function(req,res) {
     fs.stat('index.html', function(error, stats) {
 	if (error) {
