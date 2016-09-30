@@ -8,9 +8,9 @@ var port = Number(process.env.PORT || 8080);
 
 var content = fs.readFileSync(filename, "utf8");
 
-var run = function start(resp) {
-    resp.writeHead(200, {"Content-Type": "text/html"});
-    resp.end(content);
+var run = function (req, res) {
+    res.writeHead(200, {"Content-Type": "text/html"});
+    res.end(content);
 };
 
 
