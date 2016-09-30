@@ -6,7 +6,7 @@ var filename = "index.html";
 var http = require('http');
 var port = Number(process.env.PORT || 8080);
 
-var content = fs.readFileSync(filename);
+var content = fs.readFileSync(filename, "utf8");
 
 function start(resp) {
     resp.writeHead(200, {"Content-Type": "text/html"});
