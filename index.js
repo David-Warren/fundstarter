@@ -6,11 +6,11 @@ var filename = "index.html";
 var http = require('http');
 var port = Number(process.env.PORT || 8080);
 
+var content = fs.readFileSync(filename);
+
 function start(resp) {
-    var content = fs.readFileSync(filename);
     resp.writeHead(200, {"Content-Type": "text/html"});
-    resp.write(buf);
-    resp.end();
+    resp.end(content);
 };
 
 
