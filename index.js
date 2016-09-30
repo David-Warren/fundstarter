@@ -1,7 +1,7 @@
 // -----Part 1a - synchronous
 
 var fs = require('fs');
-var filename = "./index.html";
+var filename = "index.html";
 
 var http = require('http');
 var port = Number(process.env.PORT || 8080);
@@ -21,7 +21,7 @@ function start(resp) {
 };
 
 
-var server = http.createServer(requestListener);//event emiiter 
+var server = http.createServer(start);//event emiiter 
 server.listen(port,function(){
     console.log('Node app is running at port:',port);
 });
