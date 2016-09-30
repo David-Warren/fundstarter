@@ -6,15 +6,8 @@ var filename = "index.html";
 var http = require('http');
 var port = Number(process.env.PORT || 8080);
 
-/*var requestListener = function (req, res){ 
-    res.writeHead(200, {"Content-type":"text/plain"}); 
-    res.end("SIMPLE SIMPLE and fun" );
-}
-*/
-
-var buffer = fs.readFileSync(filename, "utf8");
-
 function start(resp) {
+    var content = fs.readFileSync(filename);
     resp.writeHead(200, {"Content-Type": "text/html"});
     resp.write(buf);
     resp.end();
