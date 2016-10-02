@@ -17,8 +17,9 @@ var run = function (req, res) {
 
 /*------Part 1b------*/
 var content = fs.readFile(filename, "utf8", function(err, data) {
-    if (err) return console.error(err);
-    console.log(data.toString());
+    if (err) throw error;
+    res.write(data);
+    res.end();
 });
 
 var run = function(req, res) {
