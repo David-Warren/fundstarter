@@ -16,13 +16,14 @@ var run = function (req, res) {
 
 
 /*------Part 1b------*/
-
+var server = http.createServer(function(req,response) {
 response.writeHead(200, {"Content-type":"text/html"});
 
 fs.readFile(filename, "utf8", function(err, data) {
     if (err) throw error;
     response.write(data);
     response.end();
+});
 });
 
 /* var run = function(req, res) {
@@ -33,7 +34,7 @@ fs.readFile(filename, "utf8", function(err, data) {
 
 
 //This is used in every part
-var server = http.createServer(function(req,response));//event emiiter 
+//var server = http.createServer(function(req,response));//event emiiter 
 
 server.listen(port,Function(){
     console.log('Node app is running at port:',port);
