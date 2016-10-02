@@ -36,6 +36,6 @@ fs.readFile(filename, "utf8", function(err, data) {
 //This is used in every part
 //var server = http.createServer(function(req,response));//event emiiter 
 
-server.listen(port,Function(){
+server.listen(port,Function()){
     console.log('Node app is running at port:',port);
 });
