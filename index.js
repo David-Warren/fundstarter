@@ -16,16 +16,20 @@ var run = function (req, res) {
 
 
 /*------Part 1b------*/
-var content = fs.readFile(filename, "utf8", function(err, data) {
+
+res.writeHead(200, {"Content-type":"text/html"});
+
+fs.readFile(filename, "utf8", function(err, data) {
     if (err) throw error;
     res.write(data);
     res.end();
 });
 
-var run = function(req, res) {
+/* var run = function(req, res) {
     res.writeHead(200, {"Content-Type": "text/html"});
     res.end(content);
 };
+*/
 
 
 //This is used in every part
