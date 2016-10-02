@@ -16,6 +16,7 @@ var run = function (req, res) {
 
 
 /*------Part 1b------*/
+/*
 var server = http.createServer(function(req,response) {
 response.writeHead(200, {"Content-type":"text/html"});
 
@@ -29,11 +30,31 @@ fs.readFile(filename, "utf8", function(err, data) {
 /* var run = function(req, res) {
     res.writeHead(200, {"Content-Type": "text/html"});
     res.end(content);
-};
+}; //Deleted function
 */
 
+/*------Part 2------*/
+fs.stat(filename, function(err, stast) {
+    if (err) {
+	throw error;
+	}
+    console.log(stast);
+});
 
-//This is used in every part
-//var server = http.createServer(function(req,response));//event emiiter 
+response.writeHead(200, {"Content-type":"text/html"})
+fs.open(filename, "r", function(err,fd) {
+    var readBuffer = new Buffer(3000);
+    var bufferOffset = 0;
+        bufferLength = readBuffer.length,
+        filePosition = 0;
+fs.read(fd, readBuffer, bufferOffset, bufferLength, filePosition, function(err,readBytes) {
+    if(error) {throw error}
+    response.write(readBuffer.toString())
+    response.end()
+});
+});
+});
+
+
 
 server.listen(port);
