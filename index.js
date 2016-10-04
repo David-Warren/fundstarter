@@ -45,11 +45,11 @@ fs.stat(filename, function(err, stast) {
 response.writeHead(200, {"Content-type":"text/html"})
 fs.open(filename, "r", function(err,fd) {
     var readBuffer = new Buffer(3000);
-    var bufferOffset = 0
+    var bufferOffset = 0;
     var bufferLength = readBuffer.length;
     var filePosition = 0;
 fs.read(fd, readBuffer, bufferOffset, bufferLength, filePosition, function(err,readBytes) {
-    if(error) {throw error}
+    if(err) {throw error}
     response.write(readBuffer.toString());
     response.end();
 });
