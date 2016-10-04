@@ -34,6 +34,7 @@ fs.readFile(filename, "utf8", function(err, data) {
 */
 
 /*------Part 2------*/
+var server = http.createServer(function(req,response) {
 fs.stat(filename, function(err, stast) {
     if (err) {
 	throw error;
